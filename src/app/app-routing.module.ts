@@ -1,19 +1,27 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Routes, RouterModule } from '@angular/router'
-import { HomeComponent } from './home/home.component';
-import { UsuarioComponent } from './usuario/usuario.component';
+import { CommonModule } from '@angular/common'
+import { RouterModule, Routes } from '@angular/router'
+
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent }, //componente home
-  { path: 'usuario', component: UsuarioComponent }, //componente usuario
-  { path: '', pathMatch:'full', redirectTo:'/home' } //caso não ache as rotas, é direcionado para componente home pelo path
+  {
+     path: 'home',
+     loadChildren:'./home/home.module#HomeModule' //toda vez que chamarem a rota home, vai carregar o módulo homemodule
+  },
+{ path: 'usuario',
+    loadChildren:'./usuario/usuario.module#UsuarioModule'
+},
+{ path:'',
+    pathMatch:'full',
+    redirectTo:'./home'
+}
 ];
 
 @NgModule({
   declarations: [],
   imports: [
-    RouterModule.forRoot(routes) //linka o módulo às rotas
+    CommonModule,
+    RouterModule.forRoot(routes, {useHash:true}) //linka o módulo às rotas
   ],
 exports: [ RouterModule ]
 })
