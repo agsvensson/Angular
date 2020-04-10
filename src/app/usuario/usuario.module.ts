@@ -7,7 +7,7 @@ import { UsuarioRoutingModule } from './usuario.routing.module';
   declarations: [UsuarioComponent],
   imports: [
     CommonModule,
-    UsuarioRoutingModule
+    UsuarioRoutingModule,
   ]
 })
 export class UsuarioModule { }

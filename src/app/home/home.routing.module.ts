@@ -7,7 +7,6 @@ const routes: Routes = [
   { path: '',
     component:HomeComponent   //assim que acessar a rota pai vai acessar o HomeComponent
   },
-
 ];
 
 @NgModule({
