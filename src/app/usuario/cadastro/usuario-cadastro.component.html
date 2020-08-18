@@ -1,0 +1,13 @@
+<form>
+    <div>
+        <label>Nome</label>
+        <input type="text" name="nome" [(ngModel)]="usuario.nome" />  <!-- em usuario.module.ts é necessária a importação de um componente -->
+    </div>
+    <div>
+        <label>E-mail</label>
+        <input type="email" name="email" [(ngModel)]="usuario.email" /> 
+    </div>
+    <div>
+        <button (click)="salvar()">Salvar</button>
+    </div>
+</form>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'menu',
@@ -6,16 +7,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-
-  public texto:string
-  constructor() { }
+items:MenuItem[]
 
   ngOnInit(): void {
-    this.texto = "Olá, tudo bem?"
-  }
-
-  clicou(){
-    this.texto = "Clicou"
-  }
+    this.items = [
+        {
+            label: 'Home',
+            items: [{
+                    label: 'Home', 
+                    icon: 'pi pi-fw pi-home',
+                    routerLink:'home'
+                },
+            ]
+        },
+        {
+            label: 'Usuário',
+            icon: 'pi pi-fw pi-user',
+            routerLink:'usuario'
+        }
+    ];
+}
 
 }

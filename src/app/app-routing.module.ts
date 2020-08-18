@@ -2,15 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common'
 import { RouterModule, Routes } from '@angular/router'
 
-
-
+// CARREGAR ROTAS
 const routes: Routes = [
   {
      path: 'home',
-     loadChildren:'./home/home.module#HomeModule' //toda vez que chamarem a rota home, vai carregar o módulo homemodule
+     loadChildren: () => import('./home/home.module').then(m => m.HomeModule) //toda vez que chamarem a rota home, vai carregar o módulo homemodule
   },
 { path: 'usuario',
-    loadChildren:'./usuario/usuario.module#UsuarioModule'
+    loadChildren: () => import('./usuario/usuario.module').then(m => m.UsuarioModule)  //toda vez que chamarem a rota home, vai carregar o módulo usuariomodule
+},
+{ path: 'estados',
+    loadChildren: () => import('./estados/estados.module').then(m => m.EstadosModule)  //toda vez que chamarem a rota home, vai carregar o módulo usuariomodule
 },
 { path:'',
     pathMatch:'full',

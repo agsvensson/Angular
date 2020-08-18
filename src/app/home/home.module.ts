@@ -4,7 +4,7 @@ import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home.routing.module';
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [HomeComponent], // módulo responsável por carregar o component home
   imports: [
     CommonModule,
     HomeRoutingModule
